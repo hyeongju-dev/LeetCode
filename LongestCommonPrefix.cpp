@@ -1,7 +1,5 @@
-/*
-LeetCode: Longest Common Prefix
-https://leetcode.com/problems/longest-common-prefix/
-*/
+/* LeetCode: Longest Common Prefix
+ * https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/887/ */
 
 /* Vertical Scanning Approach */
 class Solution {
@@ -24,9 +22,9 @@ public:
 
 
 
-#define min(a,b) ((a) < (b) ? (a) : (b)) 
- 
 /* Divide and Conquer Approach */
+#define min(a,b) ((a) < (b) ? (a) : (b)) 
+
 string longestCommonPrefix(vector<string>& strs) {
     if (strs.size() == 0)
         return "";
@@ -51,16 +49,15 @@ string commonPrefix(const string left, const string right) {
             return left.substr(0,i);
     return left.substr(0,minLen);
 }
- 
 /* In the worst case we have n equal strings with length m
  * Time complexity: O(S), where S is the number of all characters in the array, S=m⋅n Time complexity is 2⋅T(2/n)+O(m). Therefore time complexity is O(S). In the best case this algorithm performs O(minLen⋅n) comparisons, where minLen is the shortest string of the array
- * Space complexity: O(m⋅logn). There is a memory overhead since we store recursive calls in the execution stack. There are logn recursive calls, each store need mm space to store the result, so space complexity is O(m⋅logn) */
+ * Space complexity: O(m⋅logn). There is a memory overhead since we store recursive calls in the execution stack. There are logn recursive calls, each store need m space to store the result, so space complexity is O(m⋅logn) */
  
  
  
 /* Binary Search Approach */
 string longestCommonPrefix(vector<string>& strs) {
-    if (strs.size() == 0)
+    if (strs.empty())
         return "";
  
     int minLen = INT_MAX;
@@ -86,7 +83,6 @@ bool isCommonPrefix(const vector<string>& strs, int len) {
             return false;
     return true;
 }
- 
 /* In the worst case we have n equal strings with length m
  * Time complexity: O(S⋅logm), where S is the sum of all characters in all strings. The algorithm makes logm iterations, for each of them there are S=m⋅n comparisons, which gives in total O(S⋅logm) time complexity.
  * Space complexity: O(1). We only used constant extra space. */
