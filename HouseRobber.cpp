@@ -4,9 +4,6 @@
 #include <vector>
 using namespace std;
 
-/* Dynamic Programming Approach */
-#include <vector>
-
 class Solution {
 public:
     int rob(vector<int>& nums) {
