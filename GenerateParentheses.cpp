@@ -26,7 +26,7 @@ public:
       if (n == 0)
         return vector<string>();
 
-      dfs(0, n, 0, 0, "");
+      dfs(n, 0, 0, "");
       return ret;
     }
 };
